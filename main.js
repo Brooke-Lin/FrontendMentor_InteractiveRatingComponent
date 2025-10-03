@@ -1,9 +1,10 @@
 console.clear();
 
 // interactive with rating numbers
-let ratingButton = document.querySelectorAll(".rating-button-item");
-let selectedRate;
-let givenRate = document.querySelector("#given-rate");
+const ratingButtons = document.querySelectorAll(".rating-button-item");
+const givenRate = document.getElementById("given-rate");
+
+let selectedRate = null;
 
   ratingButton.forEach((btn,index)=>{
     btn.addEventListener('click',(e)=>{
@@ -11,7 +12,7 @@ let givenRate = document.querySelector("#given-rate");
       console.log(`selectedR:${selectedRate}, CurrentSelection: ${currentSelection},${index}`);
       
         // return early if the number is selected already
-    if(selectedRate && selectedRate == currentSelection) return;
+      if(selectedRate && selectedRate == currentSelection) return;
       
       // Otherwise  remove selected class
       if(selectedRate){
@@ -48,10 +49,8 @@ SumitFormButton.addEventListener('click',function(){
 })
 
 function pageRendering(isSubmitted=false){
-  if(!isSubmitted) return 
+  if(!isSubmitted) return;
   
-  if(isSubmitted){
-    RatingPage.classList.add('hidden');
-    SubmittedPage.classList.remove('hidden');
-  }
+  RatingPage.classList.add('hidden');
+  SubmittedPage.classList.remove('hidden');
 }
