@@ -1,0 +1,204 @@
+:root{
+    --ff-sans: 'Overpass', sans-serif;
+
+    --fw-400: 400;
+    --fw-700: 700;
+
+    --fs-regular: 1rem;
+    --fs-large: 1.75rem;
+
+    --clr-primary-400: hsl(25, 97%, 53%);
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(217, 12%, 63%);
+    --clr-neutral-300: hsl(216, 12%, 54%);
+    --clr-neutral-600: hsl(214, 19.5%, 16.1%);
+    --clr-neutral-700: hsl(216, 12%, 8%);
+    --clr-neutral-500: hsl(207, 19.6%, 18%);
+
+    --transition-base: all .2s 0s ease-in-out;/*被修改的地方*/
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height*/
+html, 
+body{
+    height:100%
+}
+    /*4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+
+body{
+    font-family: var(--ff-sans);
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-700);
+    background-color: var(--clr-neutral-700);
+    color: var(--clr-neutral-200);
+
+    display: grid;
+    place-content: center;
+    margin: 1.5rem;
+}
+
+.flex-group{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.rating-page{
+    width: 100%;
+    max-width: 375px;
+    display: grid;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--clr-neutral-600);
+    padding: 1.5rem;
+    gap: 1.5rem;
+
+    &.hidden{
+      display: none;
+    }
+    /*被修改的地方*/
+}
+
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--clr-neutral-500);
+
+}
+
+.rating-page__content{
+    display: grid;
+    gap: 1rem;
+}
+
+.rating-page__title{
+    font-size: var(--fs-large);
+    color: var(--clr-neutral-100);
+}
+
+.flex-group__number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--clr-neutral-500);
+
+  &:hover{
+    cursor: pointer;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+  }
+/*被修改的地方 Please note that this selected class must be placed AFTER hover state because this sequence will affect the selected states */
+  &.selected{
+    background-color:var(--clr-neutral-200);
+    color:var(--clr-neutral-100);
+  }
+/*被修改的地方 The neutral/light grey background color is the selected state. Use a class to control because we will need the class to toggle on/off by Javascript */
+}
+
+.submit-button{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-primary-400);
+    border: 0;
+    border-radius: 100vw;
+    padding-block: 0.75rem;
+    cursor: pointer;
+
+    &:hover{
+        background-color: var(--clr-neutral-100);
+        color: var(--clr-primary-400);
+        transition: var(--transition-base);/*被修改的地方 add css transition to any interactive components(i.e. submit button)*/
+    }
+}
+
+/*Submited page*/
+
+.submitted-page{
+  width: 100%;
+  max-width: 375px;
+  display: grid;
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: var(--clr-neutral-600);
+  padding: 2.5rem;
+  gap: 1.5rem;
+
+  &.hidden{
+    display: none;
+  }
+  /*被修改的地方*/
+}
+
+.submitted-page__img{
+  margin: auto;
+}
+
+.submitted-page__details{
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  color: var(--clr-primary-400);
+  border-radius: 100vh;
+  background-color: var(--clr-neutral-500);
+}
+
+.submitted-page__content{
+  display: grid;
+  gap: 0.5rem;
+
+  & h1{
+      color: var(--clr-neutral-100);
+      font-size: var(--fs-large);
+  }
+}
+
