@@ -18,3 +18,4 @@ Users can select rating from 1 to 5 and submit it to see a dynamic "Thank You" p
 
 **Live Demo Link**
 -
+https://brooke-lin.github.io/WebProjects_InteractiveRatingComponent/
