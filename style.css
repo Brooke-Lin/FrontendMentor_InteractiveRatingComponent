@@ -16,7 +16,7 @@
     --clr-neutral-700: hsl(216, 12%, 8%);
     --clr-neutral-500: hsl(207, 19.6%, 18%);
 
-    --transition-base: all .2s 0s ease-in-out;/*被修改的地方*/
+    --transition-base: all .2s 0s ease-in-out;
 }
 
 /*
@@ -98,7 +98,6 @@ body{
     &.hidden{
       display: none;
     }
-    /*被修改的地方*/
 }
 
 .icon{
@@ -136,12 +135,12 @@ body{
     background-color: var(--clr-primary-400);
     color: var(--clr-neutral-100);
   }
-/*被修改的地方 Please note that this selected class must be placed AFTER hover state because this sequence will affect the selected states */
+/* Note that this selected class must be placed AFTER hover state because this sequence will affect the selected states */
   &.selected{
     background-color:var(--clr-neutral-200);
     color:var(--clr-neutral-100);
   }
-/*被修改的地方 The neutral/light grey background color is the selected state. Use a class to control because we will need the class to toggle on/off by Javascript */
+/*The neutral/light grey background color is the selected state. Use a class to control because we will need the class to toggle on/off by Javascript */
 }
 
 .submit-button{
@@ -157,7 +156,7 @@ body{
     &:hover{
         background-color: var(--clr-neutral-100);
         color: var(--clr-primary-400);
-        transition: var(--transition-base);/*被修改的地方 add css transition to any interactive components(i.e. submit button)*/
+        transition: var(--transition-base);/*add css transition to any interactive components(i.e. submit button)*/
     }
 }
 
@@ -177,7 +176,6 @@ body{
   &.hidden{
     display: none;
   }
-  /*被修改的地方*/
 }
 
 .submitted-page__img{
